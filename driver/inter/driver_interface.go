@@ -6,6 +6,6 @@ type Driver interface {
 	InvokeSearchExact(fullName string) string
 }
 
-type RegisterFunc func(driver Driver)
+type RegisterFunc func(driver *Driver)
 
 var Register RegisterFunc
