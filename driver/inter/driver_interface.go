@@ -1,11 +1,13 @@
 package inter
 
+import "github.com/sanyangkeitai/g-media-dl-driver-interface/driver/model"
+
 type Driver interface {
-	DriverCode() string
-	InvokeSearchFuzzy(keyword string) string
-	InvokeSearchExact(fullName string) string
+	DriverConf() *model.DriverConfig
+	InvokeSearchFuzzy(keyword string) ([]*model.SearchMediaList, error)
+	InvokeSearchDetail(fullKeyword string) (*model.MediaDetailInfo, error)
 }
 
-type RegisterFunc func(driver *Driver)
+type RegisterFunc func(driver Driver)
 
 var Register RegisterFunc
