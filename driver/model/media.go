@@ -13,6 +13,7 @@ type MediaDetailInfo struct {
 }
 
 type MediaPlayInfo struct {
+	State    string                 `json:"state"`
 	PlayUrl  string                 `json:"playUrl"`
 	PlayType constant.MediaPlayType `json:"playType"`
 }
